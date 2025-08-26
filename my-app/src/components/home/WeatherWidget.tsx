@@ -42,32 +42,28 @@ export default function WeatherWidget() {
 
   return (
     <div>
-    <h3 style={{ color: '#5138ee', marginBottom: 16 }}>Check the Weather</h3>
+        <div className="weather-widget">
+            <h3 className="weather-title">Check the Weather</h3>
+            <select
+            className="weather-select"
+            onChange={handleCityChange}
+            >
+            <option value="">-- no selection --</option>
+            {cities.map(cities => (
+                <option key={cities}>{cities}</option>
+            ))}
+            </select>
+            
+            {loading && <p>Loading...</p>}
+            {weatherData && !loading && (
+            <div className="weather-info">
+                <h4>Weather Data for {selectedCity}:</h4>
 
-    <div className="weather-widget">
-    <h3 className="weather-title">Check the Weather</h3>
-    <select
-      className="weather-select"
-      onChange={handleCityChange}
-    >
-      <option value="">-- no selection --</option>
-      {cities.map(cities => (
-        <option key={cities}>{cities}</option>
-      ))}
-    </select>
-    
-    {loading && <p>Loading...</p>}
-    {weatherData && !loading && (
-      <div className="weather-info">
-        <h4>Weather Data for {selectedCity}:</h4>
-
-        <p>Temperature: {weatherData.current_condition[0].temp_C}°C</p>
-        <p>Feels Like : {weatherData.current_condition[0].FeelsLikeC}°C</p>
-      </div>
-    )}
-
-  </div>
-
+                <p>Temperature: {weatherData.current_condition[0].temp_C}°C</p>
+                <p>Feels Like : {weatherData.current_condition[0].FeelsLikeC}°C</p>
+            </div>
+            )}
+        </div>
     </div>
   )
 }
