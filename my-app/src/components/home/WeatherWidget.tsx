@@ -1,4 +1,5 @@
 import React from 'react'
+import WeatherInfo from './WeatherInfo';
 
 
 const cities = [
@@ -54,15 +55,7 @@ export default function WeatherWidget() {
             ))}
             </select>
             
-            {loading && <p>Loading...</p>}
-            {weatherData && !loading && (
-            <div className="weather-info">
-                <h4>Weather Data for {selectedCity}:</h4>
-
-                <p>Temperature: {weatherData.current_condition[0].temp_C}°C</p>
-                <p>Feels Like : {weatherData.current_condition[0].FeelsLikeC}°C</p>
-            </div>
-            )}
+           <WeatherInfo weatherData={weatherData} loading={loading} selectedCity={selectedCity} />
         </div>
     </div>
   )
