@@ -5,8 +5,8 @@ import WeatherWidget from './WeatherWidget';
 export default function HomePage() {
 
    const GreetingProps = {
-      firstName: sessionStorage.getItem('firstName') || 'Guest',
-      lastName: sessionStorage.getItem('lastName') || ''
+      nameOne: sessionStorage.getItem('firstName') || 'Guest',
+      nameTwo: sessionStorage.getItem('lastName') || ''
    };
 
    return (

@@ -1,14 +1,14 @@
 import React from 'react'
 
 interface GreetingProps {
-  firstName: string;
-  lastName: string;
+  nameOne: string;
+  nameTwo: string;
 };
 
-export default function Greeting({ firstName, lastName }: GreetingProps) {
+export default function Greeting({ nameOne, nameTwo }: GreetingProps) {
   return (
     <div className="greeting-container">
-      <h1>Welcome to NuraSpace, {firstName} {lastName}!</h1>
+      <h1>Welcome to NuraSpace, {nameOne} {nameTwo}!</h1>
       <h2>Welcome to NuraSpace, but really…
         you've entered Aby's headspace
       </h2>
