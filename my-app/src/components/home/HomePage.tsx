@@ -4,17 +4,17 @@ import WeatherWidget from './WeatherWidget';
 
 export default function HomePage() {
 
-   const GreetingProps = {
-      nameOne: sessionStorage.getItem('firstName') || 'Guest',
-      nameTwo: sessionStorage.getItem('lastName') || ''
-   };
+	const GreetingProps = {
+		nameOne: sessionStorage.getItem('firstName') || 'Guest',
+		nameTwo: sessionStorage.getItem('lastName') || ''
+	};
 
-   return (
-      <div className="home-page">
-         <Greeting {...GreetingProps} />
-         <WeatherWidget />
-      </div>
+	return (
+		<div className="home-page">
+			<Greeting {...GreetingProps} />
+			<WeatherWidget />
+		</div>
 
 
-   )
+	)
 }
