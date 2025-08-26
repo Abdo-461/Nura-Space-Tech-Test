@@ -5,7 +5,6 @@ interface GreetingProps{
   lastName: string;
 };
 
-
 export default function Greeting({ firstName, lastName }: GreetingProps) {
   return (
      <div>
