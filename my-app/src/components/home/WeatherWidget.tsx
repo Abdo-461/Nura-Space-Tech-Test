@@ -29,11 +29,11 @@ export default function WeatherWidget() {
 		}
 		setLoading(true);
 		try {
-			const response = await fetch(`https://wttr.in/${selectedCity}?format=j1`);
+			const response = await fetch(`https://wttr.in/${citySelected}?format=4`);
 			if (!response.ok) {
 				throw new Error('Network response was not ok');
 			}
-			const data = await response.json();
+			const data = await response.text();
 			setWeatherData(data);
 		} catch (error) {
 			alert('Failed to fetch weather data. Please try again later.' + error);

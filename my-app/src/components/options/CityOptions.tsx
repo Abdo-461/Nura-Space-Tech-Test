@@ -24,7 +24,7 @@ export default function CityOptions({ cities, onChange, value }: CityOptionsProp
 			>
 				<option value="">-- no selection --</option>
 				{cities.map(cities => (
-					<option key={cities}>{cities}</option>
+					<option key={cities} value={cities}>{cities}</option>
 				))}
 			</select>
 		</div>
