@@ -66,7 +66,7 @@ const users = [
 ]
 
 export default function LoginForm() {
-
+    
     const [Users, setUsers] = useState(users);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -95,12 +95,6 @@ export default function LoginForm() {
         const password = e.target.value;
         setPassword(password);
     }
-
-
-
-
-
-
 
   return (
     <div className="login-container">
