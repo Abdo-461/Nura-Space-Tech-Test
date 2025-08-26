@@ -72,7 +72,7 @@ export default function LoginForm() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const user = Users.find(user => user.username === username && user.password === password);
     if (user) {
@@ -98,7 +98,7 @@ export default function LoginForm() {
 
   return (
     <div className="login-container">
-      <form className="login-box">
+      <form className="login-box" onSubmit={handleLogin}>
         <div className="login-title">
           <h2>Login</h2>
         </div>
@@ -122,8 +122,7 @@ export default function LoginForm() {
           />
           <button
             type="submit"
-            className="login-button"
-            onClick={handleLogin}>
+            className="login-button">
             Login
           </button>
         </div>
