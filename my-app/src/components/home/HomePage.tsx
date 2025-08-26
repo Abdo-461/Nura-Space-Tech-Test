@@ -1,5 +1,6 @@
 import React from 'react'
 import Greeting from './Greeting';
+import WeatherWidget from './WeatherWidget';
 
 export default function HomePage() {
 
@@ -9,6 +10,11 @@ export default function HomePage() {
    };
 
   return (
-    <Greeting {...GreetingProps} />
+   <div className="home-page">
+      <Greeting {...GreetingProps} />
+      <WeatherWidget />
+   </div>
+
+    
   )
 }
