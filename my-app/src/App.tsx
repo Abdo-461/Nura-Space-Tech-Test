@@ -1,15 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login';
+import HomePage from './components/home/HomePage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { User } from './helper/helper';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <Login />
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 
