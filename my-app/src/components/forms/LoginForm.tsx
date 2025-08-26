@@ -68,13 +68,13 @@ const users = [
 export default function LoginForm() {
 
   const [Users, setUsers] = useState(users);
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    const user = Users.find(user => user.username === email && user.password === password);
+    const user = Users.find(user => user.username === username && user.password === password);
     if (user) {
       navigate('/home');
       // for demo purposes only, storing in session storage,
@@ -86,9 +86,9 @@ export default function LoginForm() {
     }
   }
 
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
-    setEmail(email);
+    setUsername(email);
   }
 
   const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -106,7 +106,7 @@ export default function LoginForm() {
             type="email"
             placeholder="username"
             className="login-input"
-            onChange={handleEmail}
+            onChange={handleUsername}
             required
           />
           <input
