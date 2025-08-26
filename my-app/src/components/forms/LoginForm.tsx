@@ -87,8 +87,8 @@ export default function LoginForm() {
   }
 
   const handleUsername = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const email = e.target.value;
-    setUsername(email);
+    const userName = e.target.value;
+    setUsername(userName);
   }
 
   const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
