@@ -99,8 +99,12 @@ export default function LoginForm() {
   return (
     <div className="login-container">
       <form className="login-box">
-        <div className="login-title">Sign In</div>
-        <div className="login-prompt">Please enter your email and password to continue.</div>
+        <div className="login-title">
+          <h2>Login</h2>
+        </div>
+        <div className="login-prompt">
+          <h3>Please enter your username and password to continue.</h3>
+        </div>
         <div className="login-form-group">
           <input
             type="email"
