@@ -107,7 +107,7 @@ export default function LoginForm() {
         </div>
         <div className="login-form-group">
           <input
-            type="email"
+            type="text"
             placeholder="username"
             className="login-input"
             onChange={handleUsername}
