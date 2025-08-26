@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react';
-import HomePage from '../home/HomePage';
 import { useNavigate } from 'react-router-dom';
 
 const users = [
@@ -78,6 +77,10 @@ export default function LoginForm() {
         const user = Users.find(user => user.username === email && user.password === password);
         if (user) {
             navigate('/home');
+            // for demo purposes only, storing in session storage,
+            // to create a personalized user experience
+            sessionStorage.setItem('firstName', user.firstName);
+            sessionStorage.setItem('lastName', user.lastName);
         } else {
             alert('Invalid email or password. Please try again.');   
         }
