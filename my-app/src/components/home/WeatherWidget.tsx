@@ -1,12 +1,13 @@
 import React from 'react'
 import WeatherInfo from './WeatherInfo';
+import CityOptions from '../options/CityOptions';
 
 
 const cities = [
-  'New York', 'London', 'Tokyo', 'Paris', 'Sydney',
-  'Dubai', 'Singapore', 'Toronto', 'Berlin', 'Cape Town',
-  'Rio de Janeiro', 'Moscow', 'Mumbai', 'Beijing', 
-  'Los Angeles', 'Chicago','Melbourne'
+    'New York', 'London', 'Tokyo', 'Paris', 'Sydney',
+    'Dubai', 'Singapore', 'Toronto', 'Berlin', 'Cape Town',
+    'Rio de Janeiro', 'Moscow', 'Mumbai', 'Beijing',
+    'Los Angeles', 'Chicago', 'Melbourne'
 ];
 
 export default function WeatherWidget() {
@@ -18,12 +19,12 @@ export default function WeatherWidget() {
 
 
     const handleCityChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
-      
         const citySelected = e.target.value;
         setSelectedCity(citySelected);
 
-        if(!citySelected){
+        if (!citySelected) {
             setWeatherData('');
+            setCity(cities);
             return;
         }
         setLoading(true);
@@ -34,29 +35,25 @@ export default function WeatherWidget() {
             }
             const data = await response.json();
             setWeatherData(data);
-        }catch (error) {
+        } catch (error) {
             alert('Failed to fetch weather data. Please try again later.' + error);
 
         }
         setLoading(false);
-    };  
+    };
 
-  return (
-    <div>
-        <div className="weather-widget">
-            <h3 className="weather-title">Check the Weather</h3>
-            <select
-            className="weather-select"
-            onChange={handleCityChange}
-            >
-            <option value="">-- no selection --</option>
-            {cities.map(cities => (
-                <option key={cities}>{cities}</option>
-            ))}
-            </select>
-            
-           <WeatherInfo weatherData={weatherData} loading={loading} selectedCity={selectedCity} />
+    return (
+        <div>
+            <div className="weather-widget">
+                <CityOptions
+                    cities={city}
+                    onChange={handleCityChange}
+                    value={selectedCity} />
+                <WeatherInfo
+                    weatherData={weatherData}
+                    loading={loading}
+                    selectedCity={selectedCity} />
+            </div>
         </div>
-    </div>
-  )
+    )
 }
