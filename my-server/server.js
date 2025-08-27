@@ -6,10 +6,10 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });
 
-// Track city/weather data subscriptions
+// Store city/weather data subscriptions
 const citySubscriptions = {};
 
-// check weather and send notification to subscribers on weather condition change
+// Check weather and send notification to subscribers on weather condition change
 const sendWeatherUpdate = (city) => {
 	const cityData = citySubscriptions[city];
 	if (!cityData) return;
@@ -30,6 +30,7 @@ const sendWeatherUpdate = (city) => {
 	})
 }
 
+// Establish WebSocket connection
 wss.on('connection', (ws) => {
 	console.log('New client connected');
 
