@@ -1,6 +1,6 @@
 import React from 'react'
 import WeatherInfo from './WeatherInfo';
-import CityOptions from '../options/CityOptions';
+import CityOptions from '../../options/CityOptions';
 import WeatherConditionUpdates from './WeatherConditionUpdates';
 import { useEffect, useRef } from 'react';
 
