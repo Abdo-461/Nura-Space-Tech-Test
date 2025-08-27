@@ -46,7 +46,9 @@ wss.on('connection', (ws) => {
 					interval: setInterval(() => sendWeatherUpdate(city), 5000) // send update every 5 seconds
 				};
 			}
-			citySubscriptions[city].subscribers.push(ws);
+			if(!citySubscriptions[city].subscribers.includes(ws)) {
+				citySubscriptions[city].subscribers.push(ws);
+			}
 			citySubscriptions[city].temperature = temperature; // update temperature on new subscription(city temperature might change, Melbourne right?)
 
 			console.log(`Client subscribed to ${city}, Client will receive updates every 5 seconds`);

@@ -1,5 +1,5 @@
 import Greeting from './Greeting';
-import WeatherWidget from './WeatherWidget';
+import WeatherWidget from './weatherController/WeatherWidget';
 
 export default function HomePage() {
 
