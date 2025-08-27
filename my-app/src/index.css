@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-box {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 32px 24px;
+  box-shadow: 0 2px 8px rgba(81,56,238,0.08);
+  min-width: 320px;
+  text-align: center;
+}
+
+.login-title {
+  color: #5138ee;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.login-prompt {
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.login-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.login-input {
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px 0px;
+  background: #5138ee;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.greeting-container {
+  text-align: center;
+  margin: 40px auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.weather-widget {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px;
+  width: 600px;
+  margin: 32px auto;
+  box-shadow: 0 2px 8px rgba(81,56,238,0.08);
+  text-align: center;
+}
+
+.weather-title {
+  color: #5138ee;
+  margin-bottom: 16px;
+}
+
+.weather-select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.weather-condition-updates {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 20px;
+  text-align: left;
+}
