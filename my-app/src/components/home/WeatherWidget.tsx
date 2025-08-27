@@ -42,7 +42,6 @@ export default function WeatherWidget() {
 		return () => {
 			ws.close();
 		};
-
 	}, []);
 
 
