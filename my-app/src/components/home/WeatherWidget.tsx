@@ -17,7 +17,6 @@ export default function WeatherWidget() {
 	const [loading, setLoading] = React.useState(false);
 	const [weatherData, setWeatherData] = React.useState<any>(null);
 
-
 	const handleCityChange = async (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const citySelected = e.target.value;
 		setSelectedCity(citySelected);
@@ -34,6 +33,14 @@ export default function WeatherWidget() {
 				throw new Error('Network response was not ok');
 			}
 			const data = await response.text();
+
+			const matchTemp = data.match(/([-+]?\d+)(?=°C)/);
+			const tempOfCity = matchTemp ? parseInt(matchTemp[1], 10) : null;
+
+
+			console.log(tempOfCity);
+			console.log(data);
+		    
 			setWeatherData(data);
 		} catch (error) {
 			alert('Failed to fetch weather data. Please try again later.' + error);
