@@ -8,7 +8,7 @@ import { useEffect, useRef } from 'react';
 const cities = [
 	'New York', 'London', 'Tokyo', 'Paris', 'Sydney',
 	'Dubai', 'Singapore', 'Toronto', 'Berlin', 'Cape Town',
-	'Rio de Janeiro', 'Moscow', 'Mumbai', 'Beijing',
+    'Moscow', 'Mumbai', 'Beijing',
 	'Los Angeles', 'Chicago', 'Melbourne'
 ];
 interface WeatherUpdate {
