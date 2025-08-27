@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface GreetingProps {
   nameOne: string;
   nameTwo: string;

@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface WeatherInfoProps {
   weatherData: any;
   loading: boolean;
